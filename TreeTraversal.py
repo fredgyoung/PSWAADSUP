@@ -18,18 +18,30 @@ def inorder(tree):
         print(tree.getRootVal())
         inorder(tree.getRightChild())
 
+def invert(tree):
+    if tree:
+        invert(tree.getLeftChild())
+        invert(tree.getRightChild())
+        if tree.leftChild and tree.rightChild:
+            tree.leftChild, tree.rightChild = tree.rightChild, tree.leftChild
+
+
 if __name__ == '__main__':
-    mytree = BinaryTree('a')
-    mytree.insertLeftChild('b')
-    mytree.insertRightChild('c')
-    mytree.getLeftChild().insertLeftChild('d')
-    mytree.getLeftChild().insertRightChild('e')
-    mytree.getRightChild().insertLeftChild('f')
-    mytree.getRightChild().insertRightChild('g')
+    mytree = BinaryTree(1)
+    mytree.insertLeftChild(2)
+    mytree.insertRightChild(3)
+    mytree.getLeftChild().insertLeftChild(4)
+    mytree.getLeftChild().insertRightChild(5)
+    mytree.getRightChild().insertLeftChild(6)
+    mytree.getRightChild().insertRightChild(7)
 
     preorder(mytree)
     print()
-    postorder(mytree)
+    invert(mytree)
+    preorder(mytree)
     print()
-    inorder(mytree)
+
+#    postorder(mytree)
+#    print()
+#    inorder(mytree)
 
