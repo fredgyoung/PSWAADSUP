@@ -1,15 +1,15 @@
 from BinaryTree import BinaryTree
 
-root = BinaryTree('a')
-print(root.getRootVal())
-print(root.getLeftChild())
+mytree = BinaryTree('a')
+print(mytree.getRootVal())
+print(mytree.getLeftChild())
 
-root.insertLeftChild('b')
-print(root.getLeftChild())
+mytree.insertLeftChild('b')
+print(mytree.getLeftChild())
 
-root.insertRightChild('c')
-print(root.getRightChild())
+mytree.insertRightChild('c')
+print(mytree.getRightChild())
 
-print(root.getRightChild().getRootVal())
-root.getRightChild().setRootVal('hello')
-print(root.getRightChild().getRootVal())
+print(mytree.getRightChild().getRootVal())
+mytree.getRightChild().setRootVal('hello')
+print(mytree.getRightChild().getRootVal())
